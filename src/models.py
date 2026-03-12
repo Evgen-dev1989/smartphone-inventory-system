@@ -5,6 +5,10 @@ class Smartphone:
         self.price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f"{self.brand} {self.model} ({self.price})"
+    
+
 class Warehouse:
     def __init__(self):
         self.items = []

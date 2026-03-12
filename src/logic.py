@@ -7,7 +7,7 @@ iphone_14_pro = Smartphone(brand = 'Iphone',model = '14 pro' ,price = '350$', qu
 
 
 warhause.add_product(iphone_15)
-
+warhause.add_product(iphone_14_pro)
 
 def sell_item():
     pass
@@ -15,4 +15,5 @@ def sell_item():
 def get_inventory_report():
     arr = warhause.items
 
-print(warhause.items)
+for i in warhause.items:
+    print(i)
