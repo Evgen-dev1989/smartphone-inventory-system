@@ -13,6 +13,7 @@ warhause.add_product(iphone_15)
 warhause.add_product(iphone_14_pro)
 warhause.add_product(xiaomi)
 warhause.add_product(samsung)
+warhause.add_product(nokia)
 
 def sell_item():
     pass
@@ -23,4 +24,14 @@ def get_inventory_report(warhause):
 def get_total_stock(warhause):
     return sum(phone.price * phone.quantity  for phone in warhause.items)
 
-print(get_inventory_report(warhause))
+def find_out_of_stock(warhause):
+    return [phone.brand for phone in warhause.items if phone.quantity == 0]
+
+def apply_global_discount(warhause, percent):
+    result = []
+    for phone in warhause.items:
+        phone.price = phone.price * (1 - percent / 100)
+        result.append((phone.model, phone.price))       
+    return result
+
+print(apply_global_discount(warhause, 5))
